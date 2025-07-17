@@ -1,0 +1,12 @@
+anthropic==0.49.0
+azure-identity==1.21.0
+azure-keyvault==4.2.0
+gurobipy==12.0.1
+matplotlib==3.10.1
+numpy==2.2.4
+openai==1.75.0
+ortools==9.12.4544
+python-dotenv==1.1.0 # Read key-value pairs from a .env file and set them as environment variables
+requests=2.32.3
+grequests=0.7.0
+scipy==1.15.2
