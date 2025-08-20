@@ -7,12 +7,13 @@ The goal of this project is to read a free-form text description of an Operation
 The entry-point "main" program is in
 - automated_generative_ai_prompt_engineering_feedback_loop_learner\automated_generative_ai_prompt_engineering_feedback_loop_learner.py
 
-You can open the project foder in Visual Studio Code and do Run / 'Run Without Debugging'.
-Below are several model accessing parameter that you would need to set as environment variables:
--- ENDPOINT_URL
--- DEPLOYMENT_NAME
--- TOKEN_PROVIDER_ENDPOINT_URL
--- API_VERSION
+You can open the project foder and the program in Visual Studio Code, then pull down Run and click 'Run Without Debugging'.
+
+Below are several parameters for accessing a LLM models hosted in Azure Open AI. You would need to set them up as environment variables:
+- ENDPOINT_URL
+- DEPLOYMENT_NAME
+- TOKEN_PROVIDER_ENDPOINT_URL
+- API_VERSION
 
 ## Project structure
 - generated: folder for storing generated Python OR programs
