@@ -9,7 +9,7 @@ The entry-point "main" program is in
 
 You can open the project foder and the program in Visual Studio Code, then pull down Run and click 'Run Without Debugging'.
 
-Below are several parameters for accessing a LLM models hosted in Azure Open AI. You would need to set them up as environment variables:
+Below are several parameters for accessing a LLM model hosted in Azure Open AI. You would need to set them up as environment variables:
 - ENDPOINT_URL
 - DEPLOYMENT_NAME
 - TOKEN_PROVIDER_ENDPOINT_URL
