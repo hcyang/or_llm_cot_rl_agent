@@ -1,14 +1,27 @@
 
-import os  
-import base64
+import os
+import sys
 from openai import AzureOpenAI  
 
+from utility_debugging.utility_debugging import DebuggingUtility
 from utility_prompt_engineering.prompt_operations_research_example_repository import PromptOperationsResearchExampleRepository
 
-endpoint = os.getenv('ENDPOINT_URL')  
-deployment = os.getenv('DEPLOYMENT_NAME')  
-subscription_key = os.getenv('AZURE_OPENAI_API_KEY')  
-api_version = os.getenv('API_VERSION')
+endpoint = os.getenv('ENDPOINT_URL', '')  
+if endpoint == "":
+    DebuggingUtility.error('The environment variable ENDPOINT_URL has not been set yet.')
+    sys.exit(1)
+deployment = os.getenv('DEPLOYMENT_NAME', '')  
+if deployment == "":
+    DebuggingUtility.error('The environment variable DEPLOYMENT_NAME has not been set yet.')
+    sys.exit(1)
+subscription_key = os.getenv('AZURE_OPENAI_API_KEY', '')  
+if subscription_key == "":
+    DebuggingUtility.error('The environment variable AZURE_OPENAI_API_KEY has not been set yet.')
+    sys.exit(1)
+api_version = os.getenv('API_VERSION', '')
+if api_version == "":
+    DebuggingUtility.error("The environment variable API_VERSION has not been set yet.")
+    sys.exit(1)
 
 # Initialize Azure OpenAI Service client with key-based authentication    
 client = AzureOpenAI(  

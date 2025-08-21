@@ -1,17 +1,29 @@
-import os
-import base64
 import json
+import os
+import sys
 from openai import AzureOpenAI
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
+from utility_debugging.utility_debugging import DebuggingUtility
 from utility_prompt_engineering.prompt_operations_research_example_repository import PromptOperationsResearchExampleRepository
-
 from utility_response_processor.utility_generative_ai_response_processor import GenerativeAiResponseProcessingUtility
 
 endpoint = os.getenv('ENDPOINT_URL', '')
+if endpoint == '':
+    DebuggingUtility.error('The environment variable ENDPOINT_URL has not been set yet.')
+    sys.exit(1)
 deployment = os.getenv('DEPLOYMENT_NAME', '')
+if deployment == '':
+    DebuggingUtility.error('The environment variable DEPLOYMENT_NAME has not been set yet.')
+    sys.exit(1)
 token_provider_endpoint = os.getenv('TOKEN_PROVIDER_ENDPOINT_URL', '')
+if token_provider_endpoint == '':
+    DebuggingUtility.error('The environment variable TOKEN_PROVIDER_ENDPOINT_URL has not been set yet.')
+    sys.exit(1)
 api_version = os.getenv('API_VERSION', '')
+if api_version == '':
+    DebuggingUtility.error("The environment variable API_VERSION has not been set yet.")
+    sys.exit(1)
 
 azure_openai_client_parameter_max_tokens=800
 azure_openai_client_parameter_temperature=0.7

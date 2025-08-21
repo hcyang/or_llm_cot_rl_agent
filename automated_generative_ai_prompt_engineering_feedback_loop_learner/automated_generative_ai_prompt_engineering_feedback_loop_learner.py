@@ -49,7 +49,7 @@ class AutomatedGenerativeAiPromptEngineeringFeedbackLoopLearner:
         for looping_index in range(number_loop_iterations):
             print('---- DEBUGGING-looping_index ----', looping_index)
             print(f'---- {looping_index}-DEBUGGING-prompts ----', prompts)
-            generative_ai_completion = OpenaiAzureFoundryUtility.get_generative_ai_completion_using_single_prompt_using_multiple_prompts(
+            generative_ai_completion = OpenaiAzureFoundryUtility.get_generative_ai_completion_using_multiple_prompts(
                 generative_ai_client,
                 generative_model_configuration,
                 generative_model_parameters,
